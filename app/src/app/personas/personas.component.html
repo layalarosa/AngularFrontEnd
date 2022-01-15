@@ -1,0 +1,52 @@
+<!-- <h2>My Heroes</h2>
+<ul class="personas">
+  <li *ngFor="let persona of personas"
+    [class.selected]="persona === selectedPersona"
+    (click)="onSelect(persona)">
+    <span class="badge">{{persona.id}}</span> <span>{{persona.nombre}}</span>{{persona.edad}}
+  </li>
+</ul> -->
+
+<!-- <h2>My Personas</h2>
+<ul class="heroes">
+  <li *ngFor="let persona of personas">
+    <a routerLink="/detail/{{persona.id}}">
+      <span class="badge">{{persona.id}}</span><span>{{persona.nombre}}</span>{{persona.edad}} 
+    </a>
+  </li>
+</ul> -->
+
+ <!-- <div *ngIf="selectedPersona">
+
+  <h2>{{selectedPersona.nombre | uppercase}} Details</h2>
+  <div><span>id: </span>{{selectedPersona.id}}</div>
+  <div>
+    <label for="persona-nombre">persona nombre: </label>
+    <input id="persona-nombre" [(ngModel)]="selectedPersona.nombre" placeholder="nombre">
+  </div>
+  <div><span>edad: </span>{{selectedPersona.edad}}</div>
+
+</div>  -->
+<!-- <app-persona-detail [persona]="selectedPersona"></app-persona-detail> -->
+
+<h2>My Personas</h2>
+
+<div>
+  <label for="new-persona">Persona nombre: </label>
+  <input id="new-persona" #personaNombre />
+
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button class="add-button" (click)="add(personaNombre.value); personaNombre.value=''">
+    Add persona
+  </button>
+</div>
+
+<ul class="personas">
+  <li *ngFor="let persona of personas">
+    <a routerLink="/detail/{{persona.id}}">
+      <span class="badge">{{persona.id}}</span><span>{{persona.nombre}}</span>{{persona.edad}}
+    </a>
+    <button class="delete" title="delete persona"
+      (click)="delete(persona)">x</button>
+  </li>
+</ul>

@@ -1,0 +1,16 @@
+<!-- <h2>Top Personas</h2>
+<div class="personas-menu">
+  <a *ngFor="let persona of personas">
+    {{persona.nombre}}
+  </a>
+</div> -->
+
+<h2>Top Personas</h2>
+<div class="personas-menu">
+  <a *ngFor="let persona of personas"
+    routerLink="/detail/{{persona.id}}">
+    {{persona.nombre}}
+  </a>
+</div>
+
+<app-persona-search></app-persona-search>
